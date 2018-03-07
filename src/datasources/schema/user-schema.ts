@@ -6,9 +6,18 @@
 import { Schema } from 'mongoose';
 
 const userSchema = new Schema({
-    name: String,
-    password: String,
-    username: String,
+    email: {
+        required: [true, 'Email is a mandatory field.'],
+        type: String,
+    },
+    name: {
+        required: [true, 'Name is a mandatory field.'],
+        type: String,
+    },
+    password: {
+        required: [true, 'Password is a mandatory field.'],
+        type: String,
+    },
 }, {
     collection: 'users',
     timestamps: true,

@@ -7,10 +7,20 @@ import { Schema } from 'mongoose';
 
 const coordinatesSchema = new Schema({
     capture_ts: Date,
-    geolocation: { type: [Number], index: '2dsphere'},
+    geolocation: {
+        index: '2dsphere',
+        required: [true, 'Geolocation Coordinates is a mandatory field.'],
+        type: [Number],
+    },
     maxSignalStrength: [],
-    userId: String,
-    vehicleId: String,
+    userId: {
+        required: [true, 'User Id is a mandatory field.'],
+        type: String,
+    },
+    vehicleId: {
+        required: [true, 'Vehicle Id is a mandatory field.'],
+        type: String,
+    },
 }, {
     collection: 'coordinates',
     timestamps: true,

@@ -6,9 +6,18 @@
 import { Schema } from 'mongoose';
 
 const vehicleSchema = new Schema({
-    chassisNo: String,
-    engineNo: String,
-    regNo: String,
+    chassisNo: {
+        required: [true, 'Chassis Number is a mandatory field.'],
+        type: String,
+    },
+    engineNo: {
+        required: [true, 'Engine Number is a mandatory field.'],
+        type: String,
+    },
+    regNo: {
+        required: [true, 'Registration Number is a mandatory field.'],
+        type: String,
+    },
 }, {
     collection: 'vehicles',
     timestamps: true,
