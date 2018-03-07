@@ -14,6 +14,8 @@ const router = express.Router();
 import clockRouter from './clock/router';
 import userRouter from './user/router';
 import usersRouter from './users/router';
+import vehicleRouter from './vehicle/router';
+import vehiclesRouter from './vehicles/router';
 
 /**
  * Bind Routes
@@ -21,6 +23,8 @@ import usersRouter from './users/router';
 router.use('/clock', clockRouter);
 router.use('/user', userRouter);
 router.use('/users', usersRouter);
+router.use('/vehicle', vehicleRouter);
+router.use('/vehicles', vehiclesRouter);
 
 /**
  * Export Module
