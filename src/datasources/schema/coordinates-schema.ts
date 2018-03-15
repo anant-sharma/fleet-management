@@ -6,13 +6,19 @@
 import { Schema } from 'mongoose';
 
 const coordinatesSchema = new Schema({
-    capture_ts: Date,
+    accuracy: Number,
+    altitude: Number,
+    capturedAt: Date,
     geolocation: {
         index: '2dsphere',
         required: [true, 'Geolocation Coordinates is a mandatory field.'],
         type: [Number],
     },
+    heading: Number,
+    latitude: Number,
+    longitude: Number,
     maxSignalStrength: [],
+    speed: Number,
     userId: {
         required: [true, 'User Id is a mandatory field.'],
         type: String,
