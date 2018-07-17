@@ -2,12 +2,14 @@
  * This file contins the config
  * required to run the app
  */
+import * as _ from 'lodash'
 
  /**
   * App Config
   */
 export const appConfig =  {
-    port: 21012,
+    auth: !_.includes(['false', 'False', 'No'], process.env.auth),
+    port: process.env.PORT || 21012,
 };
 
 /**
